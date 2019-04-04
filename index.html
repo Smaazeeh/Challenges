@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>C14 CHALLENGE</title>
+    <script>
+        function todayDate() {
+            var time = new Date();
+
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var period = time.getHours > 12 ? "PM" : "AM";
+
+            document.getElementById("tdate").innerHTML = "Today is  " + week[time.getDay()] + " Current time is : " + time.getHours() + period +  " : " + time.getMinutes() + " : " + time.getSeconds();
+        }
+    </script>
+    <script>
+        function getUrl() {
+            var getURL = document.URL;
+            alert(getURL)
+            //document.getElementById("url").innerHTML = getURL;
+        }
+    </script>
+    <script>
+        function startString() {
+            var str = prompt("Enter the sentence");
+            first = str.substring(0, 4);
+            if (first == 'Java') {
+                alert("true");
+            }
+            else { alert("false"); }
+        }
+    </script>
+
+    <script>
+
+        function largestNum() {
+            var num1 = prompt("enter first number");
+            var num2 = prompt("enter first number");
+            var num3 = prompt("enter first number");
+            results = Math.max(num1, num2, num3);
+            alert(results);
+            return results;
+
+        }
+        //document.getElementById("string").innerHTML = results;
+        /*console.log(largestNum());*/
+
+    </script>
+    <script>
+
+        function numConvert() {
+
+            var num = prompt("enter number to convert ");
+            var minutes = num % 60;
+            if (num < 60) {
+                hours = 0;
+            }
+            else {
+                hours = Math.floor(num / 60);
+            }
+            console.log(hours + minutes);
+            /*return hours + " Hr" + " : " + minutes + " Min";  */
+            var time = hours + " Hr" + " : " + minutes + " Min";
+            document.getElementById("number").innerHTML = time;
+        }
+
+    </script>
+
+    <script>
+        function capLetter() {
+            let str = prompt("Enter any sentence");
+            var st1;
+
+            str = str.split(" ");
+
+            for (let i = 0, x = str.length; i < x; i++) {
+                str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+                st1 = str.join(" ");
+            }
+
+            alert(st1);
+
+        }
+
+        /* window.alert(capLetter());*/
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <fieldset>
+        <legend style="color:palevioletred">CHALLENGES</legend>
+
+        <legend style="color:rgb(148, 22, 64)">Challenges One</legend> </br>
+        <button onclick="todayDate();">Time</button>
+        <p id="tdate"></p>
+
+        </br>
+
+        <legend style="color:rgb(116, 12, 46)">Challenge Two </legend>
+
+
+        <button onclick="getUrl()">Get URL</button>
+
+        </br>
+
+        <p>
+            <legend style="color:rgb(90, 6, 34)">Challenge Three </legend>
+            <button onclick="largestNum()">Largest Number</button>
+
+            </br>
+
+
+        </p>
+        <p>
+            <legend style="color:rgb(70, 8, 28)">Challenge Four </legend>
+            <button onclick="startString()"> Check for Java</button>
+        </p>
+        <p>
+            <legend style="color:rgb(73, 5, 28)">Challenge Five </legend>
+
+            <button onclick="numConvert()">Convert</button>
+            <p id="number"></p>
+
+
+        </p>
+
+        <p>
+            <legend style="color:rgb(92, 4, 33)">Challenge Six </legend>
+
+            <button onclick="capLetter()">Convert To Caps</button>
+
+
+
+        </p>
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        <script src="main.js"></script>
+    </fieldset>
+
+</body>
+
+</html>
